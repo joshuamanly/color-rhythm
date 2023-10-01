@@ -178,7 +178,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 90324109145399462, guid: 20b318e2db17ece42990449dc6f6a3a1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1870959199}
   m_SourcePrefab: {fileID: 100100000, guid: 20b318e2db17ece42990449dc6f6a3a1, type: 3}
 --- !u!1 &130239813
 GameObject:
@@ -2910,7 +2913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeBar: {fileID: 1575423657}
   energyBar: {fileID: 792728968}
-  myLife: 50
+  myLife: 20
   myEnergy: 5
   lifeText: {fileID: 311485557}
   energyText: {fileID: 952033496}
@@ -3199,6 +3202,7 @@ MonoBehaviour:
   blueLane: {fileID: 2133782654}
   greenLane: {fileID: 551431477}
   yellowLane: {fileID: 1224472586}
+  player: {fileID: 0}
 --- !u!1 &1490933173
 GameObject:
   m_ObjectHideFlags: 0
@@ -3946,6 +3950,26 @@ RectTransform:
   m_AnchoredPosition: {x: 6.34, y: 3.49}
   m_SizeDelta: {x: 14.6735, y: 2.2696}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1870959196 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 90324109145399462, guid: 20b318e2db17ece42990449dc6f6a3a1, type: 3}
+  m_PrefabInstance: {fileID: 87272507}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1870959199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870959196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b8eab9378a4fae458add4896462c0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+  damage: 10
+  animator: {fileID: 0}
 --- !u!1 &1923407032
 GameObject:
   m_ObjectHideFlags: 0

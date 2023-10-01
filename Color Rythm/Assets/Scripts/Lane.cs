@@ -12,6 +12,7 @@ public class Lane : MonoBehaviour
     public GameObject notePrefab;
     List<Note> notes = new List<Note>();
     public List<double> timeStamps = new List<double>();
+    
 
     int spawnIndex = 0;
     int inputIndex = 0;
@@ -114,11 +115,14 @@ public class Lane : MonoBehaviour
                     if(GameManager.instance.redLane.GetComponent<SpriteRenderer>().color == Color.magenta)
                     { 
                         GameManager.instance.scoreManager.IncreaseScoreCount();
+                        
+  
                     }
                     if (GameManager.instance.blueLane.GetComponent<SpriteRenderer>().color == Color.magenta)
                     {
                         GameManager.instance.scoreManager.IncreaseScoreCount();
                     }
+                    
                 }
                 else
                 {
