@@ -17,7 +17,7 @@ public class LifeEnergyHandler : MonoBehaviour
     public Text energyText;
 
     private float currentLife;
-    private float currentEnergy;
+    public float currentEnergy;
     private float calculateLife;
 
    
@@ -42,12 +42,7 @@ public class LifeEnergyHandler : MonoBehaviour
         energyText.text = "" + Mathf.FloorToInt(currentEnergy);
         if(currentEnergy >= myEnergy) { currentEnergy = myEnergy; }
 
-        if(currentEnergy == myEnergy) 
-        {
-            Debug.Log("attacked");
-            ReduceEnergy(myEnergy);
-            Player.Instance.DoAttack();
-        }
+       
 
        
     }

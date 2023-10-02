@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     Animator animator;
     public LifeEnergyHandler energyHandler;
 
+
     private void Awake()
     {
         Instance = this;
@@ -20,7 +21,11 @@ public class Player : MonoBehaviour
     }
     public void Update()
     {
-      
+      if(energyHandler.currentEnergy == energyHandler.myEnergy)
+        {
+            energyHandler.ReduceEnergy(energyHandler.myEnergy);
+            DoAttack();
+        }
     }
     public void DoAttack()
     {
