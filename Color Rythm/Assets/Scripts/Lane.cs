@@ -116,13 +116,15 @@ public class Lane : MonoBehaviour
                     { 
                         GameManager.instance.scoreManager.IncreaseScoreCount();
                         
-  
+                        
+
                     }
                     if (GameManager.instance.blueLane.GetComponent<SpriteRenderer>().color == Color.magenta)
                     {
                         GameManager.instance.scoreManager.IncreaseScoreCount();
                     }
-                    
+
+                    Player.Instance.energyHandler.GainEnergy(1f);
                 }
                 else
                 {

@@ -6,8 +6,10 @@ using UnityEngine.UI;
 
 public class LifeEnergyHandler : MonoBehaviour
 {
+   
     public Image lifeBar;
     public Image energyBar;
+    
 
     public float myLife;
     public float myEnergy;
@@ -17,8 +19,8 @@ public class LifeEnergyHandler : MonoBehaviour
     private float currentLife;
     private float currentEnergy;
     private float calculateLife;
-   
 
+   
     private void Start()
     {
         currentLife = myLife;
@@ -34,10 +36,20 @@ public class LifeEnergyHandler : MonoBehaviour
         if(currentEnergy < myEnergy) 
         {
             energyBar.fillAmount = Mathf.MoveTowards(energyBar.fillAmount,1f,Time.deltaTime * 0.001f);
-            currentEnergy = Mathf.MoveTowards(currentEnergy/myEnergy, 1f, Time.deltaTime * 0.001f);
+            currentEnergy = Mathf.MoveTowards(currentEnergy/myEnergy, 1f, Time.deltaTime * 0.001f) * myEnergy;
         }
 
         energyText.text = "" + Mathf.FloorToInt(currentEnergy);
+        if(currentEnergy >= myEnergy) { currentEnergy = myEnergy; }
+
+        if(currentEnergy == myEnergy) 
+        {
+            Debug.Log("attacked");
+            ReduceEnergy(myEnergy);
+            Player.Instance.DoAttack();
+        }
+
+       
     }
     public void damage(float damage)
     {
@@ -50,7 +62,7 @@ public class LifeEnergyHandler : MonoBehaviour
     }
 
     
-    public void ReduceMana(float energy)
+    public void ReduceEnergy(float energy)
     {
             currentEnergy -= energy;
             energyBar.fillAmount -= energy / myEnergy;   

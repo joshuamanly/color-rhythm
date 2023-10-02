@@ -4,16 +4,43 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance;
     public int health;
     public int damage;
-    public Animator animator;
+    Animator animator;
+    public LifeEnergyHandler energyHandler;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+    private void Start()
+    {
+       animator = GetComponent<Animator>();
+    }
+    public void Update()
+    {
+      
+    }
+    public void DoAttack()
+    {
+        StartCoroutine(Attack());
+    }
 
     IEnumerator Attack()
     {
-        gameObject.transform.position = new Vector3(gameObject.transform.position.x + 3f, gameObject.transform.position.y, gameObject.transform.position.z);
-        animator.Play("Attack",0,0);
         
-        yield return new WaitForSeconds(0.3f);    
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x + 4f, gameObject.transform.position.y, gameObject.transform.position.z);
+
+        //play animation
+        Debug.Log("attacking");
+        animator.Play("Attack");
+        
+
+        yield return new WaitForSeconds(1f);
+        //back to position
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x - 4f, gameObject.transform.position.y, gameObject.transform.position.z);
+        animator.Play("Idle");
     }
     public bool LoseHealth(int amount)
     {

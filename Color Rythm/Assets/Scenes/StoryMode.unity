@@ -175,13 +175,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8773342359119104750, guid: 20b318e2db17ece42990449dc6f6a3a1, type: 3}
+      propertyPath: damage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773342359119104750, guid: 20b318e2db17ece42990449dc6f6a3a1, type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773342359119104750, guid: 20b318e2db17ece42990449dc6f6a3a1, type: 3}
+      propertyPath: energyHandler
+      value: 
+      objectReference: {fileID: 309985897}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 90324109145399462, guid: 20b318e2db17ece42990449dc6f6a3a1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1870959199}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20b318e2db17ece42990449dc6f6a3a1, type: 3}
 --- !u!1 &130239813
 GameObject:
@@ -355,7 +364,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 262668291}
-  - component: {fileID: 262668292}
   - component: {fileID: 262668293}
   m_Layer: 0
   m_Name: Lane2
@@ -379,18 +387,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 386862582}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &262668292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 262668290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10632d49cac95aa4e9fdfa191a6c828e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &262668293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3950,26 +3946,6 @@ RectTransform:
   m_AnchoredPosition: {x: 6.34, y: 3.49}
   m_SizeDelta: {x: 14.6735, y: 2.2696}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1870959196 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 90324109145399462, guid: 20b318e2db17ece42990449dc6f6a3a1, type: 3}
-  m_PrefabInstance: {fileID: 87272507}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1870959199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1870959196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b8eab9378a4fae458add4896462c0a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
-  damage: 10
-  animator: {fileID: 0}
 --- !u!1 &1923407032
 GameObject:
   m_ObjectHideFlags: 0
