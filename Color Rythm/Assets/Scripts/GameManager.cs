@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public BlueLane blueLane;
     public GreenLane greenLane;
     public YellowLane yellowLane;
+    public Player player;
     private void Awake()
     {
         instance = this;
