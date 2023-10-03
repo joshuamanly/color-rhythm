@@ -7,8 +7,10 @@ public class Player : MonoBehaviour
     public static Player Instance;
     
     public float attackPower;
+    public float ultimatePower;
     Animator animator;
     public LifeEnergyHandler energyHandler;
+    public UltimateHandler ultimateHandler;
    
 
 
@@ -32,7 +34,22 @@ public class Player : MonoBehaviour
     {
         StartCoroutine(Attack());
     }
+    public void DoUltimate()
+    {
+        StartCoroutine(UltimateAttack());
+    }
 
+    IEnumerator UltimateAttack()
+    {
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x + 4f, gameObject.transform.position.y, gameObject.transform.position.z);
+        animator.Play("Ultimate");
+
+
+        yield return new WaitForSeconds(1f);
+        //back to position
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x - 4f, gameObject.transform.position.y, gameObject.transform.position.z);
+        animator.Play("Idle");
+    }
     IEnumerator Attack()
     {
         
@@ -47,6 +64,15 @@ public class Player : MonoBehaviour
         //back to position
         gameObject.transform.position = new Vector3(gameObject.transform.position.x - 4f, gameObject.transform.position.y, gameObject.transform.position.z);
         animator.Play("Idle");
+    }
+    public void InflictUltimate()
+    {
+        Enemy.Instance.energyHandler.Damage(ultimatePower);
+        if (Enemy.Instance.energyHandler.currentLife <= 0)
+        {
+            Enemy.Instance.Die();
+        }
+        Enemy.Instance.StartBlink();
     }
     public void InflictDamage()
     {

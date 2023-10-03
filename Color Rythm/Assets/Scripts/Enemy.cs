@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public float attackPower;
     Animator animator;
     public LifeEnergyHandler energyHandler;
-    
+    public GameObject changeObject;
 
 
     private void Awake()
@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("enemy is dead");
         Destroy(gameObject);
-        
+        changeObject.SetActive(true);
         
     }
     public void StartBlink()
