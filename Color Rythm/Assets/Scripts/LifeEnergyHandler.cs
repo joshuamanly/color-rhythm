@@ -19,6 +19,7 @@ public class LifeEnergyHandler : MonoBehaviour
     public float currentLife;
     public float currentEnergy;
     private float calculateLife;
+    public float energyRegenRate;
 
    
     private void Start()
@@ -35,8 +36,8 @@ public class LifeEnergyHandler : MonoBehaviour
 
         if(currentEnergy < myEnergy) 
         {
-            energyBar.fillAmount = Mathf.MoveTowards(energyBar.fillAmount,1f,Time.deltaTime * 0.001f);
-            currentEnergy = Mathf.MoveTowards(currentEnergy/myEnergy, 1f, Time.deltaTime * 0.001f) * myEnergy;
+            energyBar.fillAmount = Mathf.MoveTowards(energyBar.fillAmount,1f,Time.deltaTime * energyRegenRate);
+            currentEnergy = Mathf.MoveTowards(currentEnergy/myEnergy, 1f, Time.deltaTime * energyRegenRate) * myEnergy;
         }
 
         energyText.text = "" + Mathf.FloorToInt(currentEnergy);

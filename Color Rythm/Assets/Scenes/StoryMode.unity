@@ -597,6 +597,7 @@ MonoBehaviour:
   energyText: {fileID: 1632426044}
   currentLife: 0
   currentEnergy: 0
+  energyRegenRate: 0
 --- !u!114 &309985898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -960,7 +961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &407266754
 Transform:
   m_ObjectHideFlags: 0
@@ -2657,7 +2658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &801889724
 Transform:
   m_ObjectHideFlags: 0
@@ -2922,6 +2923,11 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &886450724 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4865161718081792058, guid: a83846f95ad093d459b0d80d5783b929, type: 3}
+  m_PrefabInstance: {fileID: 925504958}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &910579785
 GameObject:
   m_ObjectHideFlags: 0
@@ -2971,11 +2977,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1038873293904692279, guid: a83846f95ad093d459b0d80d5783b929, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.18
+      value: 3.67
       objectReference: {fileID: 0}
     - target: {fileID: 1038873293904692279, guid: a83846f95ad093d459b0d80d5783b929, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.89
+      value: 1.83
       objectReference: {fileID: 0}
     - target: {fileID: 1038873293904692279, guid: a83846f95ad093d459b0d80d5783b929, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3013,16 +3019,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bat
       objectReference: {fileID: 0}
+    - target: {fileID: 4865161718081792058, guid: a83846f95ad093d459b0d80d5783b929, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4865161718081792058, guid: a83846f95ad093d459b0d80d5783b929, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 925504962}
   m_SourcePrefab: {fileID: 100100000, guid: a83846f95ad093d459b0d80d5783b929, type: 3}
 --- !u!4 &925504959 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1038873293904692279, guid: a83846f95ad093d459b0d80d5783b929, type: 3}
   m_PrefabInstance: {fileID: 925504958}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &925504962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886450724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004b8ec96f1dff245995a82d77266614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPower: 5
+  energyHandler: {fileID: 1369792383}
 --- !u!1 &952033494
 GameObject:
   m_ObjectHideFlags: 0
@@ -3410,6 +3437,7 @@ MonoBehaviour:
   energyText: {fileID: 952033496}
   currentLife: 0
   currentEnergy: 0
+  energyRegenRate: 0.05
 --- !u!114 &1171981732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3983,11 +4011,12 @@ MonoBehaviour:
   lifeBar: {fileID: 1438206718}
   energyBar: {fileID: 1010317629}
   myLife: 20
-  myEnergy: 5
+  myEnergy: 4
   lifeText: {fileID: 568459827}
   energyText: {fileID: 1270342404}
   currentLife: 0
   currentEnergy: 0
+  energyRegenRate: 0.05
 --- !u!114 &1369792384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4182,12 +4211,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeBar: {fileID: 1573334005}
   energyBar: {fileID: 1545166308}
-  myLife: 20
-  myEnergy: 5
+  myLife: 40
+  myEnergy: 4
   lifeText: {fileID: 495761159}
   energyText: {fileID: 216632405}
   currentLife: 0
   currentEnergy: 0
+  energyRegenRate: 0.05
 --- !u!114 &1468493012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5183,6 +5213,11 @@ RectTransform:
   m_AnchoredPosition: {x: 6.34, y: 3.49}
   m_SizeDelta: {x: 14.6735, y: 2.2696}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1889872037 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8527471083344606454, guid: 659c69dde685da149b6b51dd58563c4a, type: 3}
+  m_PrefabInstance: {fileID: 1944758077}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1923407032
 GameObject:
   m_ObjectHideFlags: 0
@@ -5288,11 +5323,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6409310619745198098, guid: 659c69dde685da149b6b51dd58563c4a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7
+      value: 4.1
       objectReference: {fileID: 0}
     - target: {fileID: 6409310619745198098, guid: 659c69dde685da149b6b51dd58563c4a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6409310619745198098, guid: 659c69dde685da149b6b51dd58563c4a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5333,13 +5368,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8527471083344606454, guid: 659c69dde685da149b6b51dd58563c4a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1944758081}
   m_SourcePrefab: {fileID: 100100000, guid: 659c69dde685da149b6b51dd58563c4a, type: 3}
 --- !u!4 &1944758078 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6409310619745198098, guid: 659c69dde685da149b6b51dd58563c4a, type: 3}
   m_PrefabInstance: {fileID: 1944758077}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1944758081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889872037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004b8ec96f1dff245995a82d77266614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPower: 15
+  energyHandler: {fileID: 1468493011}
 --- !u!1 &2032375531
 GameObject:
   m_ObjectHideFlags: 0
