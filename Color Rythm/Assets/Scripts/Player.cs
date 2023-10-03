@@ -41,6 +41,8 @@ public class Player : MonoBehaviour
 
     IEnumerator UltimateAttack()
     {
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
+
         gameObject.transform.position = new Vector3(gameObject.transform.position.x + 4f, gameObject.transform.position.y, gameObject.transform.position.z);
         animator.Play("Ultimate");
 
@@ -52,7 +54,8 @@ public class Player : MonoBehaviour
     }
     IEnumerator Attack()
     {
-        
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
+
         gameObject.transform.position = new Vector3(gameObject.transform.position.x + 4f, gameObject.transform.position.y, gameObject.transform.position.z);
 
         //play animation

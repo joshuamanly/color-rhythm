@@ -62,8 +62,19 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("enemy is dead");
         Destroy(gameObject);
+        StartCoroutine(ChangeDelay());
+    }
+    IEnumerator ChangeDelay()
+    {
+        Debug.Log("slow down pitch");
+        SongManager.Instance.audioSource.GetComponent<AudioSource>().pitch = 0.01f;
+        Debug.Log("Wait  3 sec");
+        yield return new WaitForSeconds(3);
+        Debug.Log("activate object");
         changeObject.SetActive(true);
-        
+        Debug.Log("return pitch");
+        SongManager.Instance.audioSource.GetComponent<AudioSource>().pitch = 1f;
+
     }
     public void StartBlink()
     {

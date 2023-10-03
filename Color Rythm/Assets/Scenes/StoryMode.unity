@@ -197,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 309985897}
     - target: {fileID: 8773342359119104750, guid: 20b318e2db17ece42990449dc6f6a3a1, type: 3}
       propertyPath: ultimatePower
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8773342359119104750, guid: 20b318e2db17ece42990449dc6f6a3a1, type: 3}
       propertyPath: lutimateHandler
@@ -2579,7 +2579,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &757857090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5664,7 +5664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPower: 15
   energyHandler: {fileID: 1468493011}
-  changeObject: {fileID: 0}
+  changeObject: {fileID: 407266753}
 --- !u!1 &2032375531
 GameObject:
   m_ObjectHideFlags: 0

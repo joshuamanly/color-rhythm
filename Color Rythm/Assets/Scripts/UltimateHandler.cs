@@ -28,22 +28,25 @@ public class UltimateHandler : MonoBehaviour
         if (currentUltimate >= myUltimate) 
         { 
             currentUltimate = myUltimate;
-            
-            if(Input.GetKeyDown(KeyCode.Space)) 
-            {
-
-                DoUltimate();
-            }
-
+         
         }
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
 
+            DoUltimate();
+        }
     }
-    public void DoUltimate()
+    public bool DoUltimate()
     {
-        currentUltimate -= myUltimate;
-        ReduceUltimate(myUltimate);
-        Player.Instance.DoUltimate();
+        if (currentUltimate == myUltimate)
+        {
+            ReduceUltimate(myUltimate);
+            Player.Instance.DoUltimate();
+            return true;
+        } else
+        {
+            return false;
+        }
     }
     public void GainUltimate(float ultimate)
     {
