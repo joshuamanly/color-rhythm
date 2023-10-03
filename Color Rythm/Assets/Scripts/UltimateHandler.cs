@@ -31,6 +31,7 @@ public class UltimateHandler : MonoBehaviour
             
             if(Input.GetKeyDown(KeyCode.Space)) 
             {
+
                 DoUltimate();
             }
 
@@ -41,6 +42,7 @@ public class UltimateHandler : MonoBehaviour
     public void DoUltimate()
     {
         currentUltimate -= myUltimate;
+        ReduceUltimate(myUltimate);
         Player.Instance.DoUltimate();
     }
     public void GainUltimate(float ultimate)
