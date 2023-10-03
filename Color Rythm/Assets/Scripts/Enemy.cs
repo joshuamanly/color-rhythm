@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     }
     public void Update()
     {
-        if (energyHandler.currentEnergy == energyHandler.myEnergy)
+        if (energyHandler.currentEnergy >= energyHandler.myEnergy)
         {
             energyHandler.ReduceEnergy(energyHandler.myEnergy);
             DoAttack();
@@ -62,9 +62,11 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("enemy is dead");
         Destroy(gameObject);
-        StartCoroutine(ChangeDelay());
+        
+        changeObject.SetActive(true);
+        
     }
-    IEnumerator ChangeDelay()
+    /*IEnumerator ChangeDelay()
     {
         Debug.Log("slow down pitch");
         SongManager.Instance.audioSource.GetComponent<AudioSource>().pitch = 0.01f;
@@ -74,8 +76,7 @@ public class Enemy : MonoBehaviour
         changeObject.SetActive(true);
         Debug.Log("return pitch");
         SongManager.Instance.audioSource.GetComponent<AudioSource>().pitch = 1f;
-
-    }
+    }*/
     public void StartBlink()
     {
         StartCoroutine(BlinkRed());

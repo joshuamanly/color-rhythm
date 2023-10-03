@@ -996,7 +996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &407266754
 Transform:
   m_ObjectHideFlags: 0
@@ -3238,7 +3238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 004b8ec96f1dff245995a82d77266614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPower: 5
+  attackPower: 10
   energyHandler: {fileID: 1369792383}
   changeObject: {fileID: 801889723}
 --- !u!1 &952033494
@@ -3628,7 +3628,7 @@ MonoBehaviour:
   energyText: {fileID: 952033496}
   currentLife: 0
   currentEnergy: 0
-  energyRegenRate: 0.05
+  energyRegenRate: 0.1
 --- !u!114 &1171981732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4202,7 +4202,7 @@ MonoBehaviour:
   lifeBar: {fileID: 1438206718}
   energyBar: {fileID: 1010317629}
   myLife: 30
-  myEnergy: 4
+  myEnergy: 5
   lifeText: {fileID: 568459827}
   energyText: {fileID: 1270342404}
   currentLife: 0
@@ -4402,13 +4402,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeBar: {fileID: 1573334005}
   energyBar: {fileID: 1545166308}
-  myLife: 40
-  myEnergy: 4
+  myLife: 100
+  myEnergy: 5
   lifeText: {fileID: 495761159}
   energyText: {fileID: 216632405}
   currentLife: 0
   currentEnergy: 0
-  energyRegenRate: 0.05
+  energyRegenRate: 0.1
 --- !u!114 &1468493012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5096,7 +5096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1625767155
 Transform:
   m_ObjectHideFlags: 0
