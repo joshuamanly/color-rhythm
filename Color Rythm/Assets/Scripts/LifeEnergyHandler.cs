@@ -32,7 +32,7 @@ public class LifeEnergyHandler : MonoBehaviour
     {
         calculateLife = currentLife / myLife;
         lifeBar.fillAmount = Mathf.MoveTowards(lifeBar.fillAmount,calculateLife,Time.deltaTime);
-        lifeText.text = "" + (int) currentLife;
+        lifeText.text = "" + (int)currentLife;
 
         if(currentEnergy < myEnergy) 
         {
