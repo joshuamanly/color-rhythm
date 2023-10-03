@@ -15,6 +15,9 @@ TagManager:
   - RedLane
   - GreenLane
   - BlueLane
+  - Slime
+  - Bat
+  - Snake
   layers:
   - Default
   - TransparentFX

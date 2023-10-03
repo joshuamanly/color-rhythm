@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float attackPower;
     Animator animator;
     public LifeEnergyHandler energyHandler;
+    public GameObject gameOver;
 
 
     private void Awake()
@@ -60,6 +61,8 @@ public class Player : MonoBehaviour
     {
         Debug.Log("player is dead");
         Destroy(gameObject);
+        gameOver.SetActive(true);
+        
     }
     public void StartBlink()
     {
