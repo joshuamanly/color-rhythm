@@ -113,15 +113,20 @@ public class Lane : MonoBehaviour
                     }
                     inputIndex++;
                     if(GameManager.instance.redLane.GetComponent<SpriteRenderer>().color == Color.magenta)
-                    { 
-                        GameManager.instance.scoreManager.IncreaseScoreCount();
+                    {
+                        Player.Instance.ultimateHandler.GainUltimate(1f);
+                       
+                       // GameManager.instance.scoreManager.IncreaseScoreCount();
                         
-                        
+
 
                     }
                     if (GameManager.instance.blueLane.GetComponent<SpriteRenderer>().color == Color.magenta)
                     {
-                        GameManager.instance.scoreManager.IncreaseScoreCount();
+                        Player.Instance.ultimateHandler.GainUltimate(1f);
+                        
+                       // GameManager.instance.scoreManager.IncreaseScoreCount();
+                        
                     }
 
                     Player.Instance.energyHandler.GainEnergy(1f);
@@ -135,6 +140,7 @@ public class Lane : MonoBehaviour
             {
                 Miss();
                 print($"Missed {inputIndex} note");
+                Enemy.Instance.energyHandler.GainEnergy(1f);
                 inputIndex++;
             }
         }

@@ -5,10 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public static Player Instance;
-    public int health;
-    public int damage;
+    
+    public float attackPower;
+    public float ultimatePower;
     Animator animator;
     public LifeEnergyHandler energyHandler;
+    public UltimateHandler ultimateHandler;
+   
 
 
     private void Awake()
@@ -31,10 +34,28 @@ public class Player : MonoBehaviour
     {
         StartCoroutine(Attack());
     }
+    public void DoUltimate()
+    {
+        StartCoroutine(UltimateAttack());
+    }
 
+    IEnumerator UltimateAttack()
+    {
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
+
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x + 4f, gameObject.transform.position.y, gameObject.transform.position.z);
+        animator.Play("Ultimate");
+
+
+        yield return new WaitForSeconds(1f);
+        //back to position
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x - 4f, gameObject.transform.position.y, gameObject.transform.position.z);
+        animator.Play("Idle");
+    }
     IEnumerator Attack()
     {
-        
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
+
         gameObject.transform.position = new Vector3(gameObject.transform.position.x + 4f, gameObject.transform.position.y, gameObject.transform.position.z);
 
         //play animation
@@ -47,21 +68,33 @@ public class Player : MonoBehaviour
         gameObject.transform.position = new Vector3(gameObject.transform.position.x - 4f, gameObject.transform.position.y, gameObject.transform.position.z);
         animator.Play("Idle");
     }
-    public bool LoseHealth(int amount)
+    public void InflictUltimate()
     {
-        health -= amount;
-
-        if (health <= 0)
+        Enemy.Instance.energyHandler.Damage(ultimatePower);
+        if (Enemy.Instance.energyHandler.currentLife <= 0)
         {
-            Die();
-            return true;
+            Enemy.Instance.Die();
         }
-        return false;
+        Enemy.Instance.StartBlink();
+    }
+    public void InflictDamage()
+    {
+        Enemy.Instance.energyHandler.Damage(attackPower);
+        if(Enemy.Instance.energyHandler.currentLife <= 0)
+        {
+            Enemy.Instance.Die();
+        }
+        Enemy.Instance.StartBlink();
     }
     public void Die()
     {
-        Debug.Log("dragon is dead");
+        Debug.Log("player is dead");
         Destroy(gameObject);
+       
+    }
+    public void StartBlink()
+    {
+        StartCoroutine(BlinkRed());
     }
     IEnumerator BlinkRed()
     {
