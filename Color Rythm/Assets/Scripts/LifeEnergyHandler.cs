@@ -16,7 +16,7 @@ public class LifeEnergyHandler : MonoBehaviour
     public Text lifeText;
     public Text energyText;
 
-    private float currentLife;
+    public float currentLife;
     public float currentEnergy;
     private float calculateLife;
 
@@ -46,7 +46,7 @@ public class LifeEnergyHandler : MonoBehaviour
 
        
     }
-    public void damage(float damage)
+    public void Damage(float damage)
     {
         currentLife -= damage;
     }

@@ -135,6 +135,7 @@ public class Lane : MonoBehaviour
             {
                 Miss();
                 print($"Missed {inputIndex} note");
+                Enemy.Instance.energyHandler.GainEnergy(1f);
                 inputIndex++;
             }
         }

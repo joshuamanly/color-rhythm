@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
-    public static Player Instance;
+    public static Enemy Instance;
     
     public float attackPower;
     Animator animator;
@@ -17,15 +17,24 @@ public class Player : MonoBehaviour
     }
     private void Start()
     {
-       animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
     public void Update()
     {
-      if(energyHandler.currentEnergy == energyHandler.myEnergy)
+        if (energyHandler.currentEnergy == energyHandler.myEnergy)
         {
             energyHandler.ReduceEnergy(energyHandler.myEnergy);
             DoAttack();
         }
+    }
+    public void InflictDamage()
+    {
+        Player.Instance.energyHandler.Damage(attackPower);
+        if(Player.Instance.energyHandler.currentLife <= 0 )
+        {
+            Player.Instance.Die();
+        }
+        Player.Instance.StartBlink();
     }
     public void DoAttack()
     {
@@ -34,31 +43,23 @@ public class Player : MonoBehaviour
 
     IEnumerator Attack()
     {
-        
-        gameObject.transform.position = new Vector3(gameObject.transform.position.x + 4f, gameObject.transform.position.y, gameObject.transform.position.z);
+
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x - 4f, gameObject.transform.position.y, gameObject.transform.position.z);
 
         //play animation
         Debug.Log("attacking");
         animator.Play("Attack");
-        
+
 
         yield return new WaitForSeconds(1f);
         //back to position
-        gameObject.transform.position = new Vector3(gameObject.transform.position.x - 4f, gameObject.transform.position.y, gameObject.transform.position.z);
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x + 4f, gameObject.transform.position.y, gameObject.transform.position.z);
         animator.Play("Idle");
     }
-    public void InflictDamage()
-    {
-        Enemy.Instance.energyHandler.Damage(attackPower);
-        if(Enemy.Instance.energyHandler.currentLife <= 0)
-        {
-            Enemy.Instance.Die();
-        }
-        Enemy.Instance.StartBlink();
-    }
+    
     public void Die()
     {
-        Debug.Log("player is dead");
+        Debug.Log("enemy is dead");
         Destroy(gameObject);
     }
     public void StartBlink()

@@ -184,6 +184,10 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8773342359119104750, guid: 20b318e2db17ece42990449dc6f6a3a1, type: 3}
+      propertyPath: attackPower
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773342359119104750, guid: 20b318e2db17ece42990449dc6f6a3a1, type: 3}
       propertyPath: energyHandler
       value: 
       objectReference: {fileID: 309985897}
@@ -591,6 +595,7 @@ MonoBehaviour:
   myEnergy: 5
   lifeText: {fileID: 639425546}
   energyText: {fileID: 1632426044}
+  currentLife: 0
   currentEnergy: 0
 --- !u!114 &309985898
 MonoBehaviour:
@@ -1479,7 +1484,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4118522115825249167, guid: e8a0d79277b7889489bcdb374b846371, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1931200873}
   m_SourcePrefab: {fileID: 100100000, guid: e8a0d79277b7889489bcdb374b846371, type: 3}
 --- !u!4 &540156972 stripped
 Transform:
@@ -3400,6 +3408,7 @@ MonoBehaviour:
   myEnergy: 5
   lifeText: {fileID: 311485557}
   energyText: {fileID: 952033496}
+  currentLife: 0
   currentEnergy: 0
 --- !u!114 &1171981732
 MonoBehaviour:
@@ -3977,6 +3986,7 @@ MonoBehaviour:
   myEnergy: 5
   lifeText: {fileID: 568459827}
   energyText: {fileID: 1270342404}
+  currentLife: 0
   currentEnergy: 0
 --- !u!114 &1369792384
 MonoBehaviour:
@@ -4176,6 +4186,7 @@ MonoBehaviour:
   myEnergy: 5
   lifeText: {fileID: 495761159}
   energyText: {fileID: 216632405}
+  currentLife: 0
   currentEnergy: 0
 --- !u!114 &1468493012
 MonoBehaviour:
@@ -5248,6 +5259,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923407032}
   m_CullTransparentMesh: 1
+--- !u!1 &1931200870 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4118522115825249167, guid: e8a0d79277b7889489bcdb374b846371, type: 3}
+  m_PrefabInstance: {fileID: 540156971}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1931200873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931200870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004b8ec96f1dff245995a82d77266614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPower: 5
+  energyHandler: {fileID: 1171981731}
 --- !u!1001 &1944758077
 PrefabInstance:
   m_ObjectHideFlags: 0
