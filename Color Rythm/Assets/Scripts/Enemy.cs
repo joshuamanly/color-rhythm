@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     Animator animator;
     public LifeEnergyHandler energyHandler;
     public GameObject changeObject;
+    public GameObject parentObject;
 
 
     private void Awake()
@@ -19,6 +20,8 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        energyHandler.currentEnergy = 0;
+        energyHandler.energyBar.fillAmount = 0 / energyHandler.myEnergy;
     }
     public void Update()
     {
@@ -61,11 +64,12 @@ public class Enemy : MonoBehaviour
     public void Die()
     {
         Debug.Log("enemy is dead");
-        Destroy(gameObject);
-        
-        changeObject.SetActive(true);
-        
+        StartCoroutine(Died());
+        Destroy(parentObject);
+        changeObject.SetActive(true);  
     }
+    
+
     /*IEnumerator ChangeDelay()
     {
         Debug.Log("slow down pitch");
@@ -80,6 +84,13 @@ public class Enemy : MonoBehaviour
     public void StartBlink()
     {
         StartCoroutine(BlinkRed());
+    }
+    IEnumerator Died()
+    {
+        Time.timeScale = 0;
+        animator.Play("Died");
+        yield return new WaitForSeconds(3);
+        Time.timeScale = 1;
     }
     IEnumerator BlinkRed()
     {
