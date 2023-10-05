@@ -65,32 +65,24 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("enemy is dead");
         StartCoroutine(Died());
-        Destroy(parentObject);
-        changeObject.SetActive(true);  
+       // Destroy(parentObject);
+       // changeObject.SetActive(true);  
     }
     
-
-    /*IEnumerator ChangeDelay()
-    {
-        Debug.Log("slow down pitch");
-        SongManager.Instance.audioSource.GetComponent<AudioSource>().pitch = 0.01f;
-        Debug.Log("Wait  3 sec");
-        yield return new WaitForSeconds(3);
-        Debug.Log("activate object");
-        changeObject.SetActive(true);
-        Debug.Log("return pitch");
-        SongManager.Instance.audioSource.GetComponent<AudioSource>().pitch = 1f;
-    }*/
     public void StartBlink()
     {
         StartCoroutine(BlinkRed());
     }
     IEnumerator Died()
     {
-        Time.timeScale = 0;
+        Debug.Log("died animation");
         animator.Play("Died");
-        yield return new WaitForSeconds(3);
-        Time.timeScale = 1;
+        Debug.Log("wait 3 s");
+        SongManager.Instance.audioSource.GetComponent<AudioSource>().pitch = 0.001f;
+        yield return new WaitForSeconds(1.5f);
+        Destroy(parentObject);
+        changeObject.SetActive(true);
+        SongManager.Instance.audioSource.GetComponent<AudioSource>().pitch = 0.8f;
     }
     IEnumerator BlinkRed()
     {

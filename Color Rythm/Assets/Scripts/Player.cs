@@ -54,8 +54,8 @@ public class Player : MonoBehaviour
     }
     IEnumerator Attack()
     {
-        gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
 
+        Debug.Log("changed position");
         gameObject.transform.position = new Vector3(gameObject.transform.position.x + 4f, gameObject.transform.position.y, gameObject.transform.position.z);
 
         //play animation
@@ -89,12 +89,17 @@ public class Player : MonoBehaviour
     public void Die()
     {
         Debug.Log("player is dead");
-        Destroy(gameObject);
-       
+        StartCoroutine(Died());  
     }
     public void StartBlink()
     {
         StartCoroutine(BlinkRed());
+    }
+    IEnumerator Died()
+    {
+        animator.Play("Died");
+        yield return new WaitForSeconds(3.0f);
+        Destroy(gameObject);
     }
     IEnumerator BlinkRed()
     {

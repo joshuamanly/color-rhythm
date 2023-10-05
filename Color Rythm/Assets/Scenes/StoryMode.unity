@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5350482489514375921, guid: 20b318e2db17ece42990449dc6f6a3a1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.7448428
+      value: 2.82
       objectReference: {fileID: 0}
     - target: {fileID: 5350482489514375921, guid: 20b318e2db17ece42990449dc6f6a3a1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2449,8 +2449,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 289bed577b69b594198f57a7e4811fbb, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.555
-  m_Pitch: 1
+  m_Volume: 0.201
+  m_Pitch: 0.8
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -3242,7 +3242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 004b8ec96f1dff245995a82d77266614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPower: 10
+  attackPower: 20
   energyHandler: {fileID: 1369792383}
   changeObject: {fileID: 801889723}
   parentObject: {fileID: 1625767154}
@@ -3627,13 +3627,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeBar: {fileID: 1575423657}
   energyBar: {fileID: 792728968}
-  myLife: 50
+  myLife: 20
   myEnergy: 5
   lifeText: {fileID: 311485557}
   energyText: {fileID: 952033496}
   currentLife: 0
   currentEnergy: 0
-  energyRegenRate: 0.1
+  energyRegenRate: 0.08
 --- !u!114 &1171981732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4212,7 +4212,7 @@ MonoBehaviour:
   energyText: {fileID: 1270342404}
   currentLife: 0
   currentEnergy: 0
-  energyRegenRate: 0.1
+  energyRegenRate: 0.08
 --- !u!114 &1369792384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4407,13 +4407,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeBar: {fileID: 1573334005}
   energyBar: {fileID: 1545166308}
-  myLife: 100
+  myLife: 20
   myEnergy: 5
   lifeText: {fileID: 495761159}
   energyText: {fileID: 216632405}
   currentLife: 0
   currentEnergy: 0
-  energyRegenRate: 0.1
+  energyRegenRate: 0.08
 --- !u!114 &1468493012
 MonoBehaviour:
   m_ObjectHideFlags: 0
