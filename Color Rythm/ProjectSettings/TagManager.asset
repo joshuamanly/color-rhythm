@@ -18,6 +18,11 @@ TagManager:
   - Slime
   - Bat
   - Snake
+  - endPoint
+  - coin
+  - sisik
+  - kulit
+  - slime
   layers:
   - Default
   - TransparentFX

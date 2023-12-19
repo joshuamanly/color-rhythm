@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     public LifeEnergyHandler energyHandler;
     public GameObject changeObject;
     public GameObject parentObject;
+    private int pickupChance = 100;
+    public GameObject[] dropItems;
 
 
     private void Awake()
@@ -65,8 +67,14 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("enemy is dead");
         StartCoroutine(Died());
-       // Destroy(parentObject);
-       // changeObject.SetActive(true);  
+        int randomNumber = Random.Range(0, 101);
+        if (randomNumber < pickupChance)
+        {
+            GameObject randomPickup = dropItems[Random.Range(0, dropItems.Length)];
+            Instantiate(randomPickup, transform.position, transform.rotation);
+        }
+        // Destroy(parentObject);
+        // changeObject.SetActive(true);  
     }
     
     public void StartBlink()
